@@ -1,0 +1,17 @@
+# hello.py
+print("Hello, GitHub!")
+import requests
+
+# GitHub URL for the raw file (replace 'your_username' and 'your_repository' with actual names)
+url = "https://raw.githubusercontent.com/your_username/your_repository/main/hello.py"
+
+# Fetch the file content
+response = requests.get(url)
+
+# Check if the request was successful
+if response.status_code == 200:
+    # Print the content of the hello.py file
+    print(response.text)
+else:
+    print(f"Failed to fetch file: {response.status_code}")
+    
